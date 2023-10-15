@@ -189,7 +189,7 @@ Public Class ClienteAction
 
             con.Command.CommandText = "select idCliente,Nome,Sexo,Nascimento,cpf,Rg,Logradouro, " +
             "Numero,Complemento,Cep,Bairro,Cidade,Uf,TelefoneResidencial, Celular,Saldo " +
-            "From TbCliente Where (tbcliente.cpf like '%' @cpf '%')"
+            "From TbCliente Where Cpf like '%' @cpf '%'"
 
             Dim dt = con.ExecutaComandoDataTable()
 
@@ -233,7 +233,7 @@ Public Class ClienteAction
                 .Command.Parameters.Add(.InserirParametro(cpf, "@Cpf", DbType.String))
                 .Command.CommandText = "SET SQL_SAFE_UPDATES = 0"
 
-                .Command.CommandText = "DELETE FROM tbCliente WHERE REPLACE(Cpf, '.', '') = @Cpf"
+                .Command.CommandText = "DELETE FROM TbCliente WHERE REPLACE(Cpf, '.', '') = @Cpf"
 
                 .Command.ExecuteNonQuery()
             End With

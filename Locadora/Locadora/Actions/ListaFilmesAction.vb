@@ -7,7 +7,7 @@ Public Class ListaFilmesAction
 		Try
 			Dim resultado = New List(Of FilmesDTO)
 			con.Command.CommandText = "Select IdFilme, TituloFilme, AnoLancamento, QtdeMidias, " +
-				"ValorLocacao From tbfilmesaluguel order by TituloFilme"
+				"ValorLocacao From TbFilmesAluguel order by TituloFilme"
 
 			Dim dt = con.ExecutaComandoDataTable()
 
@@ -69,7 +69,7 @@ Public Class ListaFilmesAction
 		Try
 			con.Command.Parameters.Add(con.InserirParametro(idFilme, "@idFilme", DbType.UInt16))
 
-			con.Command.CommandText = "Delete from tbfilmesaluguel where IdFilme = @idFilme"
+			con.Command.CommandText = "Delete from TbFilmesAluguel where IdFilme = @idFilme"
 
 			con.Command.ExecuteNonQuery()
 
@@ -84,7 +84,7 @@ Public Class ListaFilmesAction
 
 	Public Function ExcluirFilmesAluguel(ByRef con As Connection)
 		Try
-			con.Command.CommandText = "Delete from tbfilmesaluguel"
+			con.Command.CommandText = "Delete from TbFilmesAluguel"
 			con.Command.ExecuteNonQuery()
 			Return True
 

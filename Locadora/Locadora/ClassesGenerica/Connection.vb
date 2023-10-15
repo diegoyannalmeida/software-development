@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Namespace ClassesGenerica
+
     Public Class Connection
 
         Public Property Transaction() As MySqlTransaction
@@ -8,7 +9,6 @@ Namespace ClassesGenerica
         Public Property Command() As MySqlCommand
 
         Public Property Connection() As MySqlConnection
-
 
         Public Sub Script(ByVal sql As String, Optional ByVal delimiter As String = "")
             Try
@@ -19,7 +19,6 @@ Namespace ClassesGenerica
                 End If
 
                 script.Execute()
-
             Catch ex As Exception
                 Throw
             End Try
@@ -28,7 +27,7 @@ Namespace ClassesGenerica
 
         Private Sub Inicializa()
 
-            Dim connectionString As String = "Server=localhost;Port=3306;Database=bd_locadora;Uid=root;Pwd=123123;"
+            Dim connectionString As String = "Server=localhost;Port=3306;Database=bd_locadora;Uid=root;Pwd=ashow84;"
 
             Try
 
@@ -37,7 +36,6 @@ Namespace ClassesGenerica
                 Command = New MySqlCommand()
 
                 Command.Connection = Connection
-
             Catch ex As Exception
                 MsgBox(ex.Message, vbCritical)
             End Try
@@ -110,7 +108,6 @@ Namespace ClassesGenerica
                     sql += " And " + clausula
                 End If
             End If
-
 
             Command.CommandText = sql
 

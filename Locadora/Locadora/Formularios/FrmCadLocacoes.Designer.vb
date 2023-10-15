@@ -1,27 +1,27 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmCadLocacoes
-	Inherits System.Windows.Forms.Form
+    Inherits System.Windows.Forms.Form
 
-	'Form overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()>
-	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-		Try
-			If disposing AndAlso components IsNot Nothing Then
-				components.Dispose()
-			End If
-		Finally
-			MyBase.Dispose(disposing)
-		End Try
-	End Sub
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
 
-	'Required by the Windows Form Designer
-	Private components As System.ComponentModel.IContainer
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
 
-	'NOTE: The following procedure is required by the Windows Form Designer
-	'It can be modified using the Windows Form Designer.  
-	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()>
-	Private Sub InitializeComponent()
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
         Me.tbpDevolucao = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.chbUsarSaldo = New System.Windows.Forms.CheckBox()
@@ -77,8 +77,6 @@ Partial Class FrmCadLocacoes
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtValorTotalLocacao = New System.Windows.Forms.TextBox()
         Me.tbpPesquisa = New System.Windows.Forms.TabPage()
-        Me.CrystalReportViewer2 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.grdPesquisarLocacoes = New System.Windows.Forms.DataGridView()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.btnListarFilmesPesquisa = New System.Windows.Forms.Button()
@@ -636,9 +634,7 @@ Partial Class FrmCadLocacoes
         Me.txtValorTotalLocacao.TabIndex = 17
         '
         'tbpPesquisa
-        '
-        Me.tbpPesquisa.Controls.Add(Me.CrystalReportViewer2)
-        Me.tbpPesquisa.Controls.Add(Me.CrystalReportViewer1)
+        '        
         Me.tbpPesquisa.Controls.Add(Me.grdPesquisarLocacoes)
         Me.tbpPesquisa.Controls.Add(Me.GroupBox5)
         Me.tbpPesquisa.Location = New System.Drawing.Point(4, 22)
@@ -648,29 +644,7 @@ Partial Class FrmCadLocacoes
         Me.tbpPesquisa.TabIndex = 1
         Me.tbpPesquisa.Text = "Pesquisa"
         Me.tbpPesquisa.UseVisualStyleBackColor = True
-        '
-        'CrystalReportViewer2
-        '
-        Me.CrystalReportViewer2.ActiveViewIndex = -1
-        Me.CrystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer2.Location = New System.Drawing.Point(735, 352)
-        Me.CrystalReportViewer2.Name = "CrystalReportViewer2"
-        Me.CrystalReportViewer2.Size = New System.Drawing.Size(8, 28)
-        Me.CrystalReportViewer2.TabIndex = 29
-        '
-        'CrystalReportViewer1
-        '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 3)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(746, 471)
-        Me.CrystalReportViewer1.TabIndex = 28
-        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
-        '
+
         'grdPesquisarLocacoes
         '
         Me.grdPesquisarLocacoes.AllowUserToAddRows = False
@@ -760,65 +734,63 @@ Partial Class FrmCadLocacoes
     End Sub
 
     Friend WithEvents tbpDevolucao As TabPage
-	Friend WithEvents tbpAluguel As TabPage
-	Friend WithEvents GroupBox1 As GroupBox
-	Friend WithEvents btnCancelarAluguel As Button
-	Friend WithEvents btnLimparAluguel As Button
-	Friend WithEvents btnSalvarAluguel As Button
-	Friend WithEvents txtValorTotalLocacao As TextBox
-	Friend WithEvents grdListaAlugueis As DataGridView
-	Friend WithEvents GroupBox2 As GroupBox
-	Friend WithEvents btnBuscarFilmesLocação As Button
-	Friend WithEvents btnBuscarClientesLocacao As Button
-	Friend WithEvents GroupBox3 As GroupBox
-	Friend WithEvents lbDataDaRetiradaLocacao As Label
-	Friend WithEvents txtDataDaRetiradaLocacao As TextBox
-	Friend WithEvents Label5 As Label
-	Friend WithEvents txtDataDeEntregaLocacao As TextBox
-	Friend WithEvents GroupBox4 As GroupBox
-	Friend WithEvents tbpPesquisa As TabPage
-	Friend WithEvents btnLimparPesquisa As Button
-	Friend WithEvents grdPesquisarLocacoes As DataGridView
-	Friend WithEvents GroupBox5 As GroupBox
-	Friend WithEvents btnListarFilmesPesquisa As Button
-	Friend WithEvents tbpLocacoes As TabControl
-	Friend WithEvents GroupBox8 As GroupBox
-	Friend WithEvents lbNomeCliente As Label
-	Friend WithEvents txtCpfClienteLocacao As TextBox
-	Friend WithEvents txtNomeClienteLocacao As TextBox
-	Friend WithEvents lbCpfCliente As Label
-	Friend WithEvents lbCodCliente As Label
-	Friend WithEvents txtCodClienteLocacao As TextBox
-	Friend WithEvents btnCancelarDevolucao As Button
-	Friend WithEvents btnDevolver As Button
-	Friend WithEvents GroupBox9 As GroupBox
-	Friend WithEvents txtValorTotalDevolucao As TextBox
-	Friend WithEvents GroupBox7 As GroupBox
-	Friend WithEvents Label3 As Label
-	Friend WithEvents txtCodClienteDevolucao As TextBox
-	Friend WithEvents Label4 As Label
-	Friend WithEvents Label6 As Label
-	Friend WithEvents txtCpfClienteDevolucao As TextBox
-	Friend WithEvents txtNomeClienteDevolucao As TextBox
-	Friend WithEvents Button1 As Button
-	Friend WithEvents btnBuscarClienteLocacao As Button
-	Friend WithEvents GroupBox10 As GroupBox
-	Friend WithEvents lbDiasLocados As Label
-	Friend WithEvents cmbQtdeDias As ComboBox
-	Friend WithEvents Label7 As Label
-	Friend WithEvents txtDataEntregaDevolucao As TextBox
-	Friend WithEvents lbValorPagar As Label
-	Friend WithEvents txtValorTotalPagarDevolucao As TextBox
-	Friend WithEvents Label2 As Label
-	Friend WithEvents txtJurosDevolucao As TextBox
-	Friend WithEvents Label10 As Label
-	Friend WithEvents txtValorPagoDevolucao As TextBox
-	Friend WithEvents lbSaldoDevedor As Label
-	Friend WithEvents txtValorSaldoFinalDevolucao As TextBox
-	Friend WithEvents grdListaDevolucao As DataGridView
-	Friend WithEvents lbSaldoCliente As Label
-	Friend WithEvents txtSaldoAtualCliente As TextBox
-	Friend WithEvents chbUsarSaldo As CheckBox
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CrystalReportViewer2 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents tbpAluguel As TabPage
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btnCancelarAluguel As Button
+    Friend WithEvents btnLimparAluguel As Button
+    Friend WithEvents btnSalvarAluguel As Button
+    Friend WithEvents txtValorTotalLocacao As TextBox
+    Friend WithEvents grdListaAlugueis As DataGridView
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnBuscarFilmesLocação As Button
+    Friend WithEvents btnBuscarClientesLocacao As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents lbDataDaRetiradaLocacao As Label
+    Friend WithEvents txtDataDaRetiradaLocacao As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtDataDeEntregaLocacao As TextBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents tbpPesquisa As TabPage
+    Friend WithEvents btnLimparPesquisa As Button
+    Friend WithEvents grdPesquisarLocacoes As DataGridView
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents btnListarFilmesPesquisa As Button
+    Friend WithEvents tbpLocacoes As TabControl
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents lbNomeCliente As Label
+    Friend WithEvents txtCpfClienteLocacao As TextBox
+    Friend WithEvents txtNomeClienteLocacao As TextBox
+    Friend WithEvents lbCpfCliente As Label
+    Friend WithEvents lbCodCliente As Label
+    Friend WithEvents txtCodClienteLocacao As TextBox
+    Friend WithEvents btnCancelarDevolucao As Button
+    Friend WithEvents btnDevolver As Button
+    Friend WithEvents GroupBox9 As GroupBox
+    Friend WithEvents txtValorTotalDevolucao As TextBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtCodClienteDevolucao As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtCpfClienteDevolucao As TextBox
+    Friend WithEvents txtNomeClienteDevolucao As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBuscarClienteLocacao As Button
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents lbDiasLocados As Label
+    Friend WithEvents cmbQtdeDias As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtDataEntregaDevolucao As TextBox
+    Friend WithEvents lbValorPagar As Label
+    Friend WithEvents txtValorTotalPagarDevolucao As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtJurosDevolucao As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtValorPagoDevolucao As TextBox
+    Friend WithEvents lbSaldoDevedor As Label
+    Friend WithEvents txtValorSaldoFinalDevolucao As TextBox
+    Friend WithEvents grdListaDevolucao As DataGridView
+    Friend WithEvents lbSaldoCliente As Label
+    Friend WithEvents txtSaldoAtualCliente As TextBox
+    Friend WithEvents chbUsarSaldo As CheckBox
 End Class
