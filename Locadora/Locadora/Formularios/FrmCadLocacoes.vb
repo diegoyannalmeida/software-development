@@ -500,8 +500,9 @@ Public Class FrmCadLocacoes
     Private Sub ListarClientesLocacao()
         Try
 
-            Dim frmListaClientes = New FrmListClientesComFilmes
-            frmListaClientes.MdiParent = MdiLocadora
+            Dim frmListaClientes = New FrmListClientesComFilmes With {
+                .MdiParent = MdiLocadora
+            }
             frmListaClientes.Show()
 
 

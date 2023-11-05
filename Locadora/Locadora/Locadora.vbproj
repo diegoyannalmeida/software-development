@@ -108,6 +108,7 @@
     <Compile Include="ClassesGenerica\Funcoes.vb" />
     <Compile Include="DTO\ClienteDTO.vb" />
     <Compile Include="DTO\FilmesDTO.vb" />
+    <Compile Include="DTO\FuncionarioDTO.vb" />
     <Compile Include="DTO\GeneroDTO.vb" />
     <Compile Include="DTO\LocacaoDTO.vb" />
     <Compile Include="DTO\MidiasDTO.vb" />
@@ -127,6 +128,18 @@
       <DependentUpon>FrmCadFilmes.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmCadFilmes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCadFuncionarios.Designer.vb">
+      <DependentUpon>FrmCadFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCadFuncionarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmCadGenero.Designer.vb">
@@ -203,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCadFilmes.resx">
       <DependentUpon>FrmCadFilmes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCadFuncionarios.resx">
+      <DependentUpon>FrmCadFuncionarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCadGenero.resx">
       <DependentUpon>FrmCadGenero.vb</DependentUpon>

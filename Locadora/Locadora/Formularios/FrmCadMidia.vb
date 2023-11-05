@@ -233,5 +233,5 @@ Public Class FrmCadMidia
 			MsgBox(ex.Message, MsgBoxStyle.Critical)
 		End Try
 
-	End Sub
+	End Sub  
 End Class
