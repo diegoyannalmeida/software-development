@@ -18,12 +18,14 @@ Public Class FilmesAction
             con.Command.Parameters.Add(con.InserirParametro(filme.QtdeEstoque, "@QtdeEstoque", DbType.UInt16))
             con.Command.Parameters.Add(con.InserirParametro(filme.ValorLocacao, "@ValorLocacao", DbType.Double))
             con.Command.Parameters.Add(con.InserirParametro(filme.TipoMidia, "@TipoMidia", DbType.String))
+            con.Command.Parameters.Add(con.InserirParametro(filme.IdFilme, "@IdFilme", DbType.String))
+
 
 
             If filme.IdFilme > 0 Then
                 sql = "Update TbFilmes Set TituloFilme = @TituloFilme, Genero = @Genero, " +
                 "AnoLancamento = @AnoLancamento, Duracao = @Duracao, QtdeMidias = @QtdeMidias,QtdeEstoque = @QtdeEstoque," +
-                "ValorLocacao = @ValorLocacao,TipoMidia = @TipoMidia Where TituloFilme = @TituloFilme And AnoLancamento = @AnoLancamento"
+                "ValorLocacao = @ValorLocacao,TipoMidia = @TipoMidia where IdFilme = @IdFilme"
 
             Else
                 sql = "Insert Into TbFilmes (TituloFilme, Genero, AnoLancamento,Duracao,QtdeMidias, QtdeEstoque,TipoMidia, ValorLocacao) Values " +

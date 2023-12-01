@@ -43,7 +43,7 @@ Partial Class FrmCadFuncionarios
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtUsuarioExcluir = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCpfExcluir = New System.Windows.Forms.TextBox()
+        Me.txtExcluirCpf = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout
         Me.tblCadastro.SuspendLayout
         Me.tbpExcluir.SuspendLayout
@@ -207,7 +207,7 @@ Partial Class FrmCadFuncionarios
         Me.tbpExcluir.Controls.Add(Me.Label1)
         Me.tbpExcluir.Controls.Add(Me.txtUsuarioExcluir)
         Me.tbpExcluir.Controls.Add(Me.Label2)
-        Me.tbpExcluir.Controls.Add(Me.txtCpfExcluir)
+        Me.tbpExcluir.Controls.Add(Me.txtExcluirCpf)
         Me.tbpExcluir.Location = New System.Drawing.Point(4, 22)
         Me.tbpExcluir.Name = "tbpExcluir"
         Me.tbpExcluir.Padding = New System.Windows.Forms.Padding(3)
@@ -259,12 +259,13 @@ Partial Class FrmCadFuncionarios
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "CPF"
         '
-        'txtCpfExcluir
+        'txtExcluirCpf
         '
-        Me.txtCpfExcluir.Location = New System.Drawing.Point(166, 29)
-        Me.txtCpfExcluir.Name = "txtCpfExcluir"
-        Me.txtCpfExcluir.Size = New System.Drawing.Size(154, 20)
-        Me.txtCpfExcluir.TabIndex = 16
+        Me.txtExcluirCpf.Location = New System.Drawing.Point(166, 29)
+        Me.txtExcluirCpf.MaxLength = 11
+        Me.txtExcluirCpf.Name = "txtExcluirCpf"
+        Me.txtExcluirCpf.Size = New System.Drawing.Size(154, 20)
+        Me.txtExcluirCpf.TabIndex = 16
         '
         'FrmCadFuncionarios
         '
@@ -302,7 +303,7 @@ End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents txtUsuarioExcluir As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtCpfExcluir As TextBox
+    Friend WithEvents txtExcluirCpf As TextBox
     Friend WithEvents rbAdmNao As RadioButton
     Friend WithEvents rbAdmSim As RadioButton
     Friend WithEvents Label3 As Label

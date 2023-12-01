@@ -30,19 +30,22 @@ Public Class ClienteAction
                 Dim dt = con.ExecutaComandoDataTable()
 
                 If dt.Rows.Count > 0 Then
-                    Return MsgBox("Já existe um cliente com esse CPF cadastrado no sistema!", MsgBoxStyle.Exclamation)
-                    Exit Function
-                Else
-                    If .IdCliente > 0 Then
-                        sql = "Update TbCliente Set Nome = @nome, Nascimento = @nascimento, Sexo = @sexo, Cpf = @cpf, Rg = @rg, Logradouro = logradouro," +
-                            "Numero = @nrCasa, Complemento = @complemento, Cep = @cep, Bairro = @bairro, Cidade = @cidade, Uf = @uf," +
-                            "TelefoneResidencial = @Residencial,Celular = @celular Where IdCliente=@IdCliente"
 
+                    Dim resultado As MsgBoxResult = MsgBox("Já existe um cliente com esse CPF cadastrado no sistema! Deseja atualizar os dados?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo)
+
+                    If resultado = MsgBoxResult.Yes Then
+                        sql = "Update tbcliente Set Nome = @nome, Nascimento = @nascimento, Sexo = @sexo, Cpf = @cpf, Rg = @rg, Logradouro = logradouro," +
+                            "Numero = @nrCasa, Complemento = @complemento, Cep = @cep, Bairro = @bairro, Cidade = @cidade, Uf = @uf," +
+                            "TelefoneResidencial = @Residencial,Celular = @celular Where Cpf = @cpf"
 
                     Else
-                        sql = "Insert Into TbCliente (Nome,Nascimento,Sexo,Cpf,Rg,Logradouro,Numero,Complemento,Cep,Bairro,Cidade,Uf,TelefoneResidencial,Celular,Saldo)" +
-                            "Values (@nome,@nascimento,@sexo,@cpf,@rg,@logradouro,@nrCasa,@complemento,@cep,@bairro,@cidade,@uf,@residencial,@celular,@saldo)"
+                        Exit Function
                     End If
+
+                Else
+                    sql = "Insert Into tbcliente (Nome,Nascimento,Sexo,Cpf,Rg,Logradouro,Numero,Complemento,Cep,Bairro,Cidade,Uf,TelefoneResidencial,Celular,Saldo)" +
+                        "Values (@nome,@nascimento,@sexo,@cpf,@rg,@logradouro,@nrCasa,@complemento,@cep,@bairro,@cidade,@uf,@residencial,@celular,@saldo)"
+
                 End If
 
                 con.Command.CommandText = sql

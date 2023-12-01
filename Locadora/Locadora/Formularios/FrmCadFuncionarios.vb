@@ -2,7 +2,7 @@
 Public Class FrmCadFuncionarios
     Private Sub BtSalvarClick(sender As Object, e As EventArgs) Handles btSalvar.Click
         Dim con As New Connection()
-        Dim nome As String = txtNomeCad.Text
+        Dim nome As String = txtNomeCad.Text.ToUpper()
         Dim login As String = txtUsuarioCad.Text
         Dim senha As String = txtSenhaCad.Text
 
@@ -103,44 +103,44 @@ Public Class FrmCadFuncionarios
     End Function
 
     Private Sub BtExcluirClick(sender As Object, e As EventArgs) Handles btExcluir.Click
-    Dim con As New Connection()
-    Dim cpf As String = txtCpfExcluir.Text
-    Dim login As String = txtUsuarioExcluir.Text
+        Dim con As New Connection()
+        Dim cpf As String = txtExcluirCpf.Text.Replace("-", "").Replace(".", "")
+        Dim login As String = txtUsuarioExcluir.Text
 
-    If Not ValidarCampos() Then
-        Return
-    End If
-
-    Try
-        
-        con.OpenConnection()
-
-        If MessageBox.Show("Tem certeza de que deseja excluir este funcionário?", "Confirmação de exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            With con
-                .Command.Parameters.Clear()
-                .Command.Parameters.Add(.InserirParametro(cpf, "@cpf", DbType.String))
-                .Command.Parameters.Add(.InserirParametro(login, "@login", DbType.String))
-
-                .Command.CommandText = "DELETE FROM TbFuncionarios WHERE Cpf = @cpf and Login = @login"
-                Dim rowsAffected As Integer = .Command.ExecuteNonQuery()
-
-                If rowsAffected > 0 Then
-                    MessageBox.Show("Funcionário excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    ' Limpa os campos após a exclusão bem-sucedida
-                    txtCpfExcluir.Clear()
-                    txtUsuarioExcluir.Clear()
-                Else
-                    MessageBox.Show("Nenhum funcionário foi excluído. Verifique o CPF e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                End If
-            End With
+        If Not ValidarCamposExcluir() Then
+            Return
         End If
-    Catch ex As Exception
-        MessageBox.Show("Ocorreu um erro ao excluir o funcionário. Detalhes: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    Finally
-        
-        con.CloseConnection()
-    End Try
-End Sub
+
+        Try
+
+            con.OpenConnection()
+
+            If MessageBox.Show("Tem certeza de que deseja excluir este funcionário?", "Confirmação de exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                With con
+                    .Command.Parameters.Clear()
+                    .Command.Parameters.Add(.InserirParametro(cpf, "@cpf", DbType.String))
+                    .Command.Parameters.Add(.InserirParametro(login, "@login", DbType.String))
+
+                    .Command.CommandText = "DELETE FROM TbFuncionarios WHERE Cpf = @cpf and Login = @login"
+                    Dim rowsAffected As Integer = .Command.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Funcionário excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        ' Limpa os campos após a exclusão bem-sucedida
+                        txtExcluirCpf.Clear()
+                        txtUsuarioExcluir.Clear()
+                    Else
+                        MessageBox.Show("Nenhum funcionário foi excluído. Verifique o CPF e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End If
+                End With
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Ocorreu um erro ao excluir o funcionário. Detalhes: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+
+            con.CloseConnection()
+        End Try
+    End Sub
 
 
     Private Sub FrmCadFuncionarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -174,6 +174,21 @@ End Sub
             MessageBox.Show("CPF inválido. Por favor, insira um CPF válido.", "CPF inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
+        Return True
+    End Function
+
+    Private Function ValidarCamposExcluir() As Boolean
+
+        If String.IsNullOrWhiteSpace(txtUsuarioExcluir.Text) Then
+            MessageBox.Show("Por favor, preencha o campo 'Usuário'.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        Dim cpf As String = txtExcluirCpf.Text.Replace(".", "").Replace("-", "")
+        If String.IsNullOrWhiteSpace(cpf) Then
+            MessageBox.Show("Por favor, preencha o campo 'CPF'.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If       
         Return True
     End Function
 
